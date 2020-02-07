@@ -1,0 +1,30 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "barbero.express.app"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "barbero.express.app"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "barbero.express.app"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "barbero.express.app"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "barbero.express.app"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "barbero.express.app"
+    }
+  },
+  "dependent_plugins": {}
+}

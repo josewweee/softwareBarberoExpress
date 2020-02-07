@@ -1,0 +1,50 @@
+<!--
+  Generated template for the DetallePedidoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>detallePedido</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>  
+  <ion-card>
+    <img style="width: 400px; height: 200px;" src="./../../assets/imgs/cartUser.jpg"/>              
+  </ion-card> 
+  <ion-list>
+    <ion-label>PEDIDO #</ion-label>
+    <ion-item>      
+      {{pedido.id}}
+    </ion-item>
+    <ion-label>TOTAL</ion-label>
+    <ion-item>      
+      {{pedido.total}}
+    </ion-item>
+    <ion-label>NOMBRE</ion-label>
+      <ion-item>
+        {{pedido.usuario.nombre}}
+      </ion-item> 
+      <ion-label>TELÉFONO</ion-label>             
+      <ion-item>
+        <a href=`tel:+{{pedido.usuario.telefono}}`>+57-{{pedido.usuario.telefono}}</a>
+      </ion-item>            
+      <ion-label>DIRECCIÓN</ion-label>
+      <ion-item>Departamento: {{pedido.departamento}}</ion-item>
+      <ion-item>Ciudad: {{pedido.ciudad}}</ion-item>
+      <ion-item>Municipio: {{pedido.municipio}}</ion-item>
+      <ion-item syle="text-center">{{pedido.direccion}}</ion-item>
+      <ion-label>LISTA DE PRODUCTOS</ion-label>
+      <button ion-button full (click)="verLista()">VER LISTA</button>  
+  </ion-list>      
+  <ion-list>
+    <button ion-button full (click)="entregado()">ENTREGADO</button>
+    <button ion-button full (click)="cancelado()" >POSPONER</button>    
+  </ion-list>
+  
+</ion-content>

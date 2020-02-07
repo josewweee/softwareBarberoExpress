@@ -1,0 +1,71 @@
+<!--
+  Generated template for the PedidosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title style="text-align: center;">PEDIDOS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding text-wrap>
+  <ion-list>
+    <ion-item-sliding *ngFor="let pedido of pedidos" [ngStyle]="{'border':getBorder(pedido.estado)}">
+      <ion-item class="save">          
+        <ion-avatar (click)="irDetallePedido(pedido)">
+          <img style="width: 100px; height: 100px;" src="./../../assets/imgs/cartUser.jpg"/>              
+        </ion-avatar> 
+        <ion-item-divider (click)="irDetallePedido(pedido)">
+          NOMBRE: {{pedido.usuario.nombre}}
+          <hr>
+          TELÉFONO: {{pedido.usuario.telefono}}
+          <hr>                               
+          MUNICIPIO: {{pedido.municipio}}
+          <hr> 
+          BARRIO: {{pedido.barrio}}
+          <hr> 
+          DIRECCIÓN: {{pedido.direccion}}
+          <hr>
+          OBSERVACIONES: {{pedido.observaciones}}
+          <hr>
+          ESTADO: {{pedido.estado}}                               
+          <hr>
+          <h2>TOTAL: ${{pedido.total | number: '1.0-0'}}</h2>
+        </ion-item-divider>
+      
+        <hr>
+          <a href="https://api.whatsapp.com/send?phone=57{{pedido.usuario.telefono}}&text=Buen día {{pedido.usuario.nombre}}, te hablamos de Barbero Express. Estoy en camino con tu pedido, estaré llegando en 10 minutos. Recuerda que el total del pedido es *${{pedido.total}}*. Gracias por tu compra!!!&source=&data=" target="_blank">PEDIDO EN CAMINO</a> 
+        <hr>
+        <a href="https://api.whatsapp.com/send?phone=57{{pedido.usuario.telefono}}&text=Buen día {{pedido.usuario.nombre}}, te hablamos de Barbero Express. Estoy en el punto indicado para la entrega. Recuerda que el total del pedido es *${{pedido.total}}*. Gracias por tu compra!!!&source=&data=" target="_blank">ESTOY EN EL PUNTO</a>   
+        <hr>
+        <button ion-button color="primary" (click)="llamar(pedido.usuario.telefono)">
+          <ion-icon name="md-call" style="margin-right: 5px;"></ion-icon>
+             LLAMAR
+        </button>
+      </ion-item> 
+      <ion-item-options side="left">
+        <button style="background-color:black;" (click)="entregado(pedido)">
+          <ion-icon name="md-checkmark-circle" style="font-size: -webkit-xxx-large; color: white;"></ion-icon>
+          <h2></h2>ENTREGADO
+        </button>        
+      </ion-item-options>        
+    </ion-item-sliding>
+    
+  </ion-list>  
+  <ion-list>
+    <button ion-button full (click)="limpiarDia()" color ="primary">LIMPIAR DÍA</button>      
+  </ion-list>
+  <ion-list>
+    <ion-label>TOTAL Barbero Express</ion-label>
+    <ion-item> {{totalBarbero}}</ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-label>TOTAL Domiciliario</ion-label>
+    <ion-item> {{totalDomiciliario}}</ion-item>
+  </ion-list>
+</ion-content>

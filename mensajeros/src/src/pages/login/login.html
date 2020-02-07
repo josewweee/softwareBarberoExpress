@@ -1,0 +1,33 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar color="primary">
+    <ion-title style="text-align: center;">Login</ion-title>    
+  </ion-toolbar>  
+</ion-header>
+
+
+<ion-content>    
+    <img src="../../assets/imgs/tarjeta.jpg" class="slide-image"/>    
+    <ion-list padding>
+
+        <ion-item>
+          <ion-label floating>CÓDIGO DE DOMICILIARIO</ion-label>
+          <ion-input type="number" [(ngModel)]="codigoDomiciliario"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label floating >Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>        
+      
+      </ion-list>
+      
+      <button style="display: block; margin:auto;" ion-button color="primary" (click)="entrar(codigoDomiciliario, password)">Iniciar Sesión</button>      
+      <!-- <button ion-button color="primary" (click)="loginGoogle()">Google</button>   -->
+</ion-content>
